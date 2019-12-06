@@ -2,9 +2,11 @@ import React from 'react'
 import userimg from '../../assets/images/usericon.png'
 import { Dropdown } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { fsc } from '../../helper/fontControlHelper'
+import withMedia from 'react-media-query-hoc/dist/with-media'
 
 const NavBar = props => {
-
+    const { media } = props;
     const headerstyle={
         width:"100%",
         background:"black",
@@ -27,7 +29,7 @@ const NavBar = props => {
                     <ul style={{ display:"flex", listStyle:"none",  margin:0, padding:0 }}>
                         <li className="px-5 py-3" style={{ padding:"0 3.5rem" }}>
                             <a href="/" style={{textDecoration:"none"}}>
-                                <i class="fa fa-bell"></i>
+                                <i class="fa fa-bell" style={{fontSize:fsc(media,20)}}></i>
                             </a>
                         </li>
                         <li className="pt-1" style={{ padding:"0 1.5rem"}}>
@@ -52,4 +54,4 @@ const NavBar = props => {
     )
 }
 
-export default NavBar
+export default withMedia(NavBar)

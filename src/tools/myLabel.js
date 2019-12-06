@@ -6,7 +6,7 @@ const MyLabel = props => {
     const { media } = props;
     const { style, text } = props;
     const defaultStyle = {
-        fontSize:"fsc(media,15)",
+        fontSize:fsc(media,15),
         color:"#FFFFFF"
     };
     const userStyle = style === undefined ? {} : style;
